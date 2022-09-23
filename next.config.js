@@ -5,8 +5,22 @@
 
 module.exports = {
   reactStrictMode: true,
-  experimental: {css: true},
+  compiler: {
+    styledComponents: true
+  },
+  generateBuildId: async () => {
+    return require('child_process')
+        .execSync('git rev-parse HEAD')
+        .toString().trim();
+  },
   images: {
     domains: ['www.frc.org','frc.org','frcaction.org','www.frcaction.org','www.frcblog.com']
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+    return config;
   }
 }
