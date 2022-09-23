@@ -2,7 +2,7 @@ version: "3.8"
 services:
 
   frontend:
-    image: familyresearchcouncil/acm
+    image: familyresearchcouncil/next-template
     build:
       context: ./
     restart: unless-stopped

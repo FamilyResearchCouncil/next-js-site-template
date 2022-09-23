@@ -2,13 +2,13 @@ version: "3.8"
 
 services:
     frontend:
-        image: familyresearchcouncil/acm:staging
+        image: familyresearchcouncil/next-template:staging
         deploy:
             replicas: 1
             labels:
                 - "traefik.enable=true"
-                - "traefik.http.routers.acm-prod.rule=Host(`staging.acm.frc.org`)"
-                - "traefik.http.services.acm-prod.loadbalancer.server.port=3000"
+                - "traefik.http.routers.next-template-staging.rule=Host(`next-template.frc.org`)"
+                - "traefik.http.services.next-template-staging.loadbalancer.server.port=3000"
             placement:
                 constraints:
                     - node.role == worker
