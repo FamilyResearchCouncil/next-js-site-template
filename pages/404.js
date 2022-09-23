@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from "next/link";
 
 const FourOhFourSection = styled.section`
   color: ${({ theme }) => theme.colors.isWhite};
@@ -16,7 +17,7 @@ const Custom404 = () => (
     <>
         <FourOhFourSection>
             <h1>Oops! <small>Page Not Found</small></h1>
-            <GoldLink href="/" displayName="RETURN TO HOME" />
+            <Link href="/">RETURN TO HOME</Link>
         </FourOhFourSection>
     </>
 );
